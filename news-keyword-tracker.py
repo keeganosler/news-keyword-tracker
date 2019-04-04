@@ -25,5 +25,14 @@ for site in websites:
         segment = site.text[i:i+len(keyword)].lower()
         if segment == keyword:
           any_present = True
+          
+#send email if any keywords are present in any of the headlines on any of the pages
+if any_present == True:
+  con = smtplib.SMTP('smtp.gmail.com', 587)
+  con.ehlo()
+  con.starttls()
+  con.login('example@email.com', 'app_key')
+  con.sendmail('example@email.com', email_address, 'Subject: News Notification: %s is on %s', keyword, website)
+  con.quit()
       
 
