@@ -13,5 +13,12 @@ any_present = False
 websites = ['https://www.cbc.ca/news', 'https://www.cbc.ca/news/canada', 'https://www.cbc.ca/news/canada/north']
 
 #download and parse page
-
+for site in websites:
+  get_news = requests.get(site)
+  get_news.raise_for_status()
+  news_page = bs4.BeautifulSoup(get_news.text, 'html.parser')
+  news = news_page.select('.headline')
+  for headline in news:
+    for i in range(len(headline.text)):
+      
 
