@@ -13,6 +13,7 @@ any_present = False
 websites = ['https://www.cbc.ca/news', 'https://www.cbc.ca/news/canada', 'https://www.cbc.ca/news/canada/north']
 
 #download and parse page
+#should check each listed page for each listed keyword
 for site in websites:
   get_news = requests.get(site)
   get_news.raise_for_status()
@@ -20,5 +21,9 @@ for site in websites:
   news = news_page.select('.headline')
   for headline in news:
     for i in range(len(headline.text)):
+      for keyword in keywords:
+        segment = site.text[i:i+len(keyword)].lower()
+        if segment == keyword:
+          any_present = True
       
 
