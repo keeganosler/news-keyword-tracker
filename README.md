@@ -8,6 +8,8 @@ This is a useful tool if one is trying to keep up to date on a developing news s
 
 Currently this only works by running the program manually but I'd like to find a way for it to run automatically each day without any prompting.
 
+As well, this currently requires manual inputs for the news sites to search. I'd like it to be able to search everything, all the news sites.
+
 ## Acknowledgements
 
 This project was heavily inspired by [this](https://www.codementor.io/gergelykovcs/how-and-why-i-built-a-simple-web-scrapig-script-to-notify-us-about-our-favourite-food-fcrhuhn45) tutorial by Gergely Kovacs.
